@@ -1,0 +1,15 @@
+<p>
+  <b>Title:</b>
+  <%= recipe.title %>
+</p>
+
+<p>
+  <b>Recipe:</b>
+  <%= recipe.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Recipe', [recipe.user, recipe],
+              :confirm => 'Are you sure?',
+              :method => :delete %>
+</p>

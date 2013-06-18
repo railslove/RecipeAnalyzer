@@ -1,0 +1,25 @@
+<h1>Listing display_names</h1>
+
+<table>
+  <tr>
+    <th>Locale</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @display_names.each do |display_name| %>
+  <tr>
+    <td><%= display_name.locale.language %></td>
+    <td><%= display_name.text %></td>
+    <td><%= link_to 'Show', display_name %></td>
+    <td><%= link_to 'Edit', edit_display_name_path(display_name) %></td>
+    <td><%= link_to 'Destroy', display_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Display name', new_display_name_path %>

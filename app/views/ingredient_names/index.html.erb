@@ -1,0 +1,23 @@
+<h1>Listing ingredient_names</h1>
+
+<table>
+  <tr>
+    <th>Locale</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingredient_names.each do |ingredient_name| %>
+  <tr>
+    <td><%= ingredient_name.locale %></td>
+    <td><%= link_to 'Show', ingredient_name %></td>
+    <td><%= link_to 'Edit', edit_ingredient_name_path(ingredient_name) %></td>
+    <td><%= link_to 'Destroy', ingredient_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ingredient name', new_ingredient_name_path %>

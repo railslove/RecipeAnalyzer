@@ -1,0 +1,17 @@
+<%= form_for(@ingredients_name) do |f| %>
+  <% if @ingredients_name.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ingredients_name.errors.count, "error") %> prohibited this ingredients_name from being saved:</h2>
+
+      <ul>
+      <% @ingredients_name.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
