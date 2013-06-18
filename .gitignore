@@ -17,3 +17,7 @@
 
 # Ignore RubyMine files
 .idea/
+
+# Ignore local folder for Vanessa's files
+
+/files

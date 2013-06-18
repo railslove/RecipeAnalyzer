@@ -18,3 +18,5 @@ Locale.create(language: 'DE')
 DisplayName.create(text: 'Vegetarian', locale_id: '1')
 DisplayName.create(text: 'Végétarien', locale_id: '2')
 DisplayName.create(text: 'Vegetarisch', locale_id: '3')
+
+
