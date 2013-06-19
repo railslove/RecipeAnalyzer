@@ -18,6 +18,7 @@
 # Ignore RubyMine files
 .idea/
 
-# Ignore local folder for Vanessa's files
-
-/files
+# Uncomment next line to ignore local folder for Vanessa's files
+# In here you have th sql script to seed database witrh ingredients, tags, and ingredient names from CSV tables 
+# run in your command line: rails db < path_to_your_sql_file.sql
+# /files
