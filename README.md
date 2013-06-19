@@ -1,4 +1,4 @@
-In /files folder you have th sql scripts to seed database witrh ingredients, tags, and ingredient names from CSV tables
+In /files folder sql scripts to seed database with ingredients, tags, and ingredient names from CSV tables
 
 To seed, run the following in your RecipeAnalyzer application path:
 
