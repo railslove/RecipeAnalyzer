@@ -7,5 +7,5 @@ class IngredientName < ActiveRecord::Base
 
 
 
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :ingredient_id
 end
