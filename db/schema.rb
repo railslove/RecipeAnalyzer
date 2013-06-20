@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607151641) do
+ActiveRecord::Schema.define(:version => 20130620135941) do
 
   create_table "display_names", :force => true do |t|
     t.integer  "locale_id"
@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(:version => 20130607151641) do
   add_index "ingredients", ["tag"], :name => "index_ingredients_on_tag"
 
   create_table "ingredients_names", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ingredients_tags", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
