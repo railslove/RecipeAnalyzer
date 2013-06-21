@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :display_name %><br />
-    <%= f.text_field :display_name %>
+    <%= f.select :display_name_id, DisplayName.all.collect { |dn| dn.text.to_s } %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
