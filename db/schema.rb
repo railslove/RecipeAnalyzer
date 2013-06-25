@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620135941) do
+ActiveRecord::Schema.define(:version => 20130625135250) do
 
   create_table "display_names", :force => true do |t|
     t.integer  "locale_id"
@@ -36,21 +36,19 @@ ActiveRecord::Schema.define(:version => 20130620135941) do
     t.string   "source"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "tag_id"
-    t.integer  "tag"
   end
-
-  add_index "ingredients", ["tag"], :name => "index_ingredients_on_tag"
 
   create_table "ingredients_names", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "ingredients_tags", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "ingredients_tags", :id => false, :force => true do |t|
+    t.integer "ingredient_id"
+    t.integer "tag_id"
   end
+
+  add_index "ingredients_tags", ["ingredient_id", "tag_id"], :name => "index_ingredients_tags_on_ingredient_id_and_tag_id"
 
   create_table "locales", :force => true do |t|
     t.string   "language"
@@ -58,15 +56,30 @@ ActiveRecord::Schema.define(:version => 20130620135941) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "recipe_tags", :id => false, :force => true do |t|
+    t.integer "recipe_id"
+    t.integer "tag_id"
+  end
+
   create_table "recipes", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.text     "ingredient_list"
+    t.integer  "prep_time"
+    t.integer  "number_of_person"
   end
 
   add_index "recipes", ["user_id"], :name => "index_recipes_on_user_id"
+
+  create_table "recipes_tag", :id => false, :force => true do |t|
+    t.integer "recipe_id"
+    t.integer "tag_id"
+  end
+
+  add_index "recipes_tag", ["recipe_id", "tag_id"], :name => "index_recipes_tag_on_recipe_id_and_tag_id"
 
   create_table "tags", :force => true do |t|
     t.integer  "display_name_id"
