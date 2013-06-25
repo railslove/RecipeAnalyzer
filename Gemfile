@@ -22,5 +22,5 @@ end
 
 gem 'jquery-rails'
 gem 'acts-as-taggable-on'
-gem 'ingreedy'
+gem 'ingreedy', '~> 0.0.4 '
 gem 'hangry'

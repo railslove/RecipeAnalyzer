@@ -115,7 +115,7 @@ DEPENDENCIES
   acts-as-taggable-on
   coffee-rails (~> 3.2.1)
   hangry
-  ingreedy
+  ingreedy (~> 0.0.4)
   jquery-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
