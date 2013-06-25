@@ -11,11 +11,6 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @recipe.user %>
-</p>
-
-<p>
   <b>Parser:</b><br/>
   <%= raw ingreedyparse(@recipe.body).join('<br/>') %>
 </p>
