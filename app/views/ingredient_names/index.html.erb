@@ -3,14 +3,15 @@
 <table>
   <tr>
     <th>Locale</th>
-    <th></th>
+    <th>Exression</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @ingredient_names.each do |ingredient_name| %>
   <tr>
-    <td><%= ingredient_name.locale %></td>
+    <td><%= ingredient_name.locale.language %></td>
+    <td><%= ingredient_name.expression %></td>
     <td><%= link_to 'Show', ingredient_name %></td>
     <td><%= link_to 'Edit', edit_ingredient_name_path(ingredient_name) %></td>
     <td><%= link_to 'Destroy', ingredient_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>

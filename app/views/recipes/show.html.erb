@@ -12,7 +12,11 @@
 
 <p>
   <b>Parser:</b><br/>
-  <%= raw ingreedyparse(@recipe.body).join('<br/>') %>
+  <% @local_array = ingreedyparse(@recipe.body) %>
+  <%= raw @local_array.join('<br/>') %>
+  <%  %>
+  <br/><br/>
+
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

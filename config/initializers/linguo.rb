@@ -1,0 +1,1 @@
+Linguo.api_key = '904e1d0ed9251f7d34980b86dc87267d'
