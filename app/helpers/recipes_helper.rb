@@ -20,7 +20,6 @@ module RecipesHelper
      else
         "No picture available"
      end
-
   end
 
 end
