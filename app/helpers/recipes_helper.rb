@@ -14,4 +14,13 @@ module RecipesHelper
     end
   end
 
+  def check_image(recipe)
+     if recipe.image_url?
+       image_tag recipe.image_url, size: "120x120"
+     else
+        "No picture available"
+     end
+
+  end
+
 end

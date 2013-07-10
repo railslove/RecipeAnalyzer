@@ -4,11 +4,7 @@
 </p>
 
 <p>
-  <% if recipe.image_url? %>
-    <%= image_tag recipe.image_url, size: "120x120" %>
-  <% else %>
-    <%= %>
-  <% end %>
+  <%= check_image(recipe) %>
 </p>
 
 <p>
