@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Body</th>
-    <th></th>
+    <th>Photo</th>
+    <th>Ingredients</th>
     <th></th>
     <th></th>
   </tr>
@@ -12,7 +12,8 @@
 <% @recipes.each do |recipe| %>
   <tr>
     <td><%= link_to recipe.title , recipe %></td>
-    <td><%= recipe.body %></td>
+    <td><%= check_image(recipe) %></td>
+    <td><%= recipe.ingredient_list %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>

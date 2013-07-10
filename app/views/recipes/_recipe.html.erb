@@ -8,7 +8,17 @@
 </p>
 
 <p>
-  <b>Recipe:</b>
+  <b>Ingredients:</b>
+  <% if recipe.ingredient_list.length > 50 %>
+      <%= truncate(recipe.ingredient_list, length: 50) %>
+      <%= link_to_function '...More', "$(this).parent().html('#{escape_javascript recipe.ingredient_list}')" %>
+  <% else %>
+      <%= recipe.ingredient_list %>
+  <% end %>
+</p>
+
+<p>
+  <b>Instructions:</b>
   <% if recipe.body.length > 50 %>
       <%= truncate(recipe.body, length: 50) %>
       <%= link_to_function '...More', "$(this).parent().html('#{escape_javascript recipe.body}')" %>

@@ -6,13 +6,22 @@
 </p>
 
 <p>
-  <b>Body:</b>
+  <%= check_image(@recipe) %>
+</p>
+
+<p>
+  <b>Ingredients:</b>
+  <%= @recipe.ingredient_list %>
+</p>
+
+<p>
+  <b>Instructions:</b>
   <%= @recipe.body %>
 </p>
 
 <p>
   <b>Parser:</b><br/>
-  <% @local_array = ingreedyparse(@recipe.body) %>
+  <% @local_array = ingreedyparse(@recipe.ingredient_list) %>
   <%= raw @local_array.join('<br/>') %>
   <% %>
   <br/><br/>
