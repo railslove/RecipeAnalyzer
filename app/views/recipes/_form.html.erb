@@ -5,16 +5,37 @@
       <br/>
       <%= f.text_field :title %>
     </div>
+
     <div class="field">
-      <%= f.label :body %>
+      <%= f.label :ingredient_list, "List of ingredients (separated by comas/line breaks)" %>
+      <br/>
+      <%= f.text_area :ingredient_list %>
+    </div>
+
+    <div class="field">
+      <%= f.label :body, "Instructions" %>
       <br/>
       <%= f.text_area :body %>
     </div>
+
     <div class="field">
       <%= f.label :image_url %>
       <br/>
       <%= f.text_field :image_url %>
     </div>
+
+    <div class="field">
+      <%= f.label :number_of_person, "Number of servings" %>
+      <br/>
+      <%= f.select :number_of_person, (1..99) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prep_time, "Preparation Time" %>
+      <br/>
+      <%= f.select :prep_time, (1..300) %>
+    </div>
+
     <div class="actions">
       <%= f.submit %>
     </div>
