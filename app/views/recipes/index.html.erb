@@ -5,7 +5,7 @@
     <th>Title</th>
     <th>Photo</th>
     <th>Ingredients</th>
-    <th></th>
+    <th>Instructions</th>
     <th></th>
   </tr>
 
@@ -14,6 +14,7 @@
     <td><%= link_to recipe.title , recipe %></td>
     <td><%= check_image(recipe) %></td>
     <td><%= recipe.ingredient_list %></td>
+    <td><%= recipe.body %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
