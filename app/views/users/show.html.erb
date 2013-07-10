@@ -15,11 +15,18 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <a href="#recipe_create">
+    <b>Create new recipe</b>
+  </a>
+</p>
+
 <hr>
 <%= render @user.recipes %>
 
+<p id="recipe_create">
 <%= render "recipes/form" %>
-
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
