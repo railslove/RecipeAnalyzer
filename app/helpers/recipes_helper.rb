@@ -1,8 +1,24 @@
 module RecipesHelper
+  def split_text_line(text)
+    text.split(/[\r\n]+/)
+  end
+
+  def split_text_comma(text)
+    text.split(/[',']+/)
+  end
+
+
   def ingreedyparse(text)
-    recipe_array = text.split(/[\r\n]+/)
+    if split_text_line(text).size > 1
+      recipe_array = split_text_line(text)
+    else
+      recipe_array = split_text_comma(text)
+    end
+
     recipe_array.map { |item| Ingreedy.parse(item).ingredient }
   end
+
+
 
   def ingr_name_creator(local_array)
     local_array.each do |item|
