@@ -15,6 +15,8 @@ module RecipesHelper
     end
   end
 
+
+  #there is no raw join('<br/>') here because helper only delivers last/first item to view. Raw join is in the view
   def ingreedyparse(text)
      recipe_array = check_parsing(text)
      recipe_array.map { |item| Ingreedy.parse(item).ingredient }
