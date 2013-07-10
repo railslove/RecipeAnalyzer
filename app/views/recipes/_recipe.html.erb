@@ -13,19 +13,25 @@
 
 <p>
   <b>Ingredients:</b>
-  <% if recipe.ingredient_list.length > 50 %>
-      <%= truncate(recipe.ingredient_list, length: 50) %>
-      <%= link_to_function '...More', "$(this).parent().html('#{escape_javascript recipe.ingredient_list}')" %>
+  </p>
+<p>
+  <% local_array = ingredients_split(recipe.ingredient_list) %>
+  <% if local_array.length > 50 %>
+      <%= raw truncate(local_array, length: 50) %>
+      <%= raw link_to_function '...More', "$(this).parent().html('#{escape_javascript local_array}')" %>
   <% else %>
-      <%= recipe.ingredient_list %>
+      <%= raw local_array %>
   <% end %>
 </p>
 
 <p>
   <b>Instructions:</b>
-  <% if recipe.body.length > 50 %>
-      <%= truncate(recipe.body, length: 50) %>
-      <%= link_to_function '...More', "$(this).parent().html('#{escape_javascript recipe.body}')" %>
+</p>
+<p>
+  <% local_array = instructions_split(recipe.body) %>
+  <% if local_array.length > 200 %>
+      <%= raw truncate(local_array, length: 200) %>
+      <%= raw link_to_function '...More', "$(this).parent().html('#{escape_javascript local_array}')" %>
   <% else %>
       <%= recipe.body %>
   <% end %>

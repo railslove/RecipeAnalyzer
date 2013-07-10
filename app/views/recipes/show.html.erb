@@ -6,36 +6,28 @@
 </p>
 
 <p>
-  <em>added by <%= link_to @recipe.user.username, @recipe.user %></em>
-</p>
-
-<p>
   <%= check_image(@recipe) %>
 </p>
 
 <p>
   <b>Ingredients:</b>
-  <%= @recipe.ingredient_list %>
+</p>
+<p>
+  <%= ingredients_split(@recipe.ingredient_list) %>
 </p>
 
 <p>
   <b>Instructions:</b>
-  <%= @recipe.body %>
+</p>
+<p>
+  <%= ingredients_split(@recipe.body) %>
 </p>
 
 <p>
-  <b>Parser:</b><br/>
+  <b>IngreedyParser:</b><br/>
   <% @local_array = ingreedyparse(@recipe.ingredient_list) %>
   <%= raw @local_array.join('<br/>') %>
-  <br/>
-  <br/>
-
-  <% %>
-  <br/><br/>
-
 </p>
-
-
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
