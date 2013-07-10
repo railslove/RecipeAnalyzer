@@ -4,8 +4,21 @@
 </p>
 
 <p>
+  <% if recipe.image_url? %>
+    <%= image_tag recipe.image_url, size: "120x120" %>
+  <% else %>
+    <%= %>
+  <% end %>
+</p>
+
+<p>
   <b>Recipe:</b>
-  <%= recipe.body %>
+  <% if recipe.body.length > 50 %>
+      <%= truncate(recipe.body, length: 50) %>
+      <%= link_to_function '...More', "$(this).parent().html('#{escape_javascript recipe.body}')" %>
+  <% else %>
+      <%= recipe.body %>
+  <% end %>
 </p>
 
 <p>
@@ -13,3 +26,7 @@
               :confirm => 'Are you sure?',
               :method => :delete %>
 </p>
+
+<hr>
+
+
