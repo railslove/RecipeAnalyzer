@@ -2,15 +2,19 @@
 
 <table>
   <tr>
-    <th>Display name</th>
-    <th></th>
-    <th></th>
+    <th>id</th>
+    <th>Display names</th>
+    <th>Ingredients</th>
+    <th>Recipes</th>
     <th></th>
   </tr>
 
 <% @tags.each do |tag| %>
   <tr>
-    <td><%=  %></td>
+    <td><%= tag.id %></td>
+    <td><%= tag.display_names  %></td>
+    <td><%= tag.ingredients %></td>
+    <td><%= tag.recipes %></td>
     <td><%= link_to 'Show', tag %></td>
     <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
     <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
