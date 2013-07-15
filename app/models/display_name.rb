@@ -1,8 +1,11 @@
 #encoding: utf-8
 class DisplayName < ActiveRecord::Base
+
   belongs_to :tag
   belongs_to :locale
-  attr_accessible :text, :locale_id, :tag_id
+  accepts_nested_attributes_for :tag
+  attr_accessible :text, :locale_id, :tag, :tag_id
+
 
 
   # METHODS defining the 14 main allergens display_names in languages (in order or query conditions): ENGLISH, FRENCH, GERMAN.

@@ -4,17 +4,15 @@
   <tr>
     <th>id</th>
     <th>Display names</th>
-    <th>Ingredients</th>
-    <th>Recipes</th>
+
     <th></th>
   </tr>
 
 <% @tags.each do |tag| %>
   <tr>
     <td><%= tag.id %></td>
-    <td><%= tag.display_names  %></td>
-    <td><%= tag.ingredients %></td>
-    <td><%= tag.recipes %></td>
+    <td><%= tag.display_names.map {|dn| dn.text.to_s}.join(', ') %></td>
+
     <td><%= link_to 'Show', tag %></td>
     <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
     <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>

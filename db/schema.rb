@@ -11,16 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711103049) do
+ActiveRecord::Schema.define(:version => 20130715132001) do
 
   create_table "display_names", :force => true do |t|
     t.integer  "locale_id"
     t.string   "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "tag_id"
   end
 
   add_index "display_names", ["locale_id"], :name => "index_display_names_on_locale_id"
+  add_index "display_names", ["tag_id"], :name => "index_display_names_on_tag_id"
 
   create_table "ingredient_names", :force => true do |t|
     t.integer  "locale_id"

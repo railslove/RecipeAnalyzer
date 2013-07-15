@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Display name:</b>
-  <%= %>
+  <b>Tag : <%=  @tag.id %></b>
+</p>
+<p>
+  <b>Display names:</b> <br/>
+
+  <% @tag.display_names.each do |dn| %>
+    <%= dn.text %>
+      <br/>
+  <% end %>
 </p>
 
 

@@ -1,8 +1,12 @@
 RecipeAnalyzer::Application.routes.draw do
-  resources :tags
+  resources :tags do
+    resources :display_names
+  end
 
 
-  resources :display_names
+  resources :display_names do
+    resources :tags
+  end
 
 
   resources :ingredient_names
