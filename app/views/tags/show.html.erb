@@ -3,14 +3,27 @@
 <p>
   <b>Tag : <%=  @tag.id %></b>
 </p>
-<p>
-  <b>Display names:</b> <br/>
-
+<table>
+  <tr>
+    <td>
+      <b>Display names</b>
+    </td>
+    <td>
+      <b>Locale</b>
+    </td>
+  </tr>
   <% @tag.display_names.each do |dn| %>
-    <%= dn.text %>
-      <br/>
+      <tr>
+        <td>
+          <%= dn.text %>
+        </td>
+        <td>
+          <%= dn.locale.language %>
+        </td>
+      </tr>
   <% end %>
-</p>
+</table>
+
 
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
