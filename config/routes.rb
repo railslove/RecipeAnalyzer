@@ -1,6 +1,7 @@
 RecipeAnalyzer::Application.routes.draw do
   resources :tags do
     resources :display_names
+    resources :ingredients
   end
 
 
@@ -18,7 +19,9 @@ RecipeAnalyzer::Application.routes.draw do
   resources :ingredients_names
 
 
-  resources :ingredients
+  resources :ingredients do
+    resources :tags
+  end
 
 
   resources :users do

@@ -2,17 +2,18 @@
 
 <table>
   <tr>
+    <th>id</th>
     <th>Name en</th>
     <th>Tags</th>
     <th>Source</th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @ingredients.each do |ingredient| %>
   <tr>
+    <td><%= ingredient.id %></td>
     <td><%= ingredient.name_EN %></td>
-    <td><%= ingredient.tag_id %></td>
+    <td><%= join_ingredient_tag_ids(ingredient) %> </td>
     <td><%= ingredient.source %></td>
     <td><%= link_to 'Show', ingredient %></td>
     <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>

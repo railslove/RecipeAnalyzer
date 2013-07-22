@@ -14,6 +14,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1.json
   def show
     @ingredient = Ingredient.find(params[:id])
+    @tag= @ingredient.tags.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,8 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new.json
   def new
     @ingredient = Ingredient.new
+    @tag= @ingredient.tags.build
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +38,15 @@ class IngredientsController < ApplicationController
   # GET /ingredients/1/edit
   def edit
     @ingredient = Ingredient.find(params[:id])
+    @tag= @ingredient.tags.build
   end
 
   # POST /ingredients
   # POST /ingredients.json
   def create
+    params[:ingredient][:tag_ids] ||= []
     @ingredient = Ingredient.new(params[:ingredient])
+    @tag= @ingredient.tags.build
 
     respond_to do |format|
       if @ingredient.save
@@ -56,6 +62,7 @@ class IngredientsController < ApplicationController
   # PUT /ingredients/1
   # PUT /ingredients/1.json
   def update
+    params[:ingredient][:tag_ids] ||= []
     @ingredient = Ingredient.find(params[:id])
 
     respond_to do |format|

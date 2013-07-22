@@ -1,4 +1,4 @@
-<%= form_for(@ingredient) do |f| %>
+<%= simple_form_for(@ingredient) do |f| %>
   <% if @ingredient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
@@ -16,12 +16,17 @@
     <%= f.text_field :name_EN %>
   </div>
 
-    <div class="field">
-      <%= f.label :tags %>
-      <br/>
-      <%= f.collection_select :tag_id, Tag.all {|t| t.display_name.text}, :id, :text %>
-    </div>
+  <div class="field">
+    <%= f.association :tags,
+                      :collection => Tag.all(:order => 'id'),
+                      :as => :check_boxes,
+                      :multiple => true,
+                      :label => 'Choosei tags to attach to this ingredient<br/>',
+                      label_method: :id,
+                      value_method: :id,
+                      include_blank: true %>
 
+  </div>
 
   <div class="field">
     <%= f.label :source %><br />
