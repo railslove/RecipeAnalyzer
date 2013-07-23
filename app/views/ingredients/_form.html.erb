@@ -21,7 +21,7 @@
                       :collection => Tag.all(:order => 'id'),
                       :as => :check_boxes,
                       :multiple => true,
-                      :label => 'Choosei tags to attach to this ingredient<br/>',
+                      :label => 'Choose tags to attach to this ingredient<br/>',
                       label_method: :id,
                       value_method: :id,
                       include_blank: true %>
