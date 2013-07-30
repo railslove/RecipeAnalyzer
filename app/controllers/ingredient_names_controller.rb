@@ -81,4 +81,8 @@ class IngredientNamesController < ApplicationController
     end
   end
 
+  def check_exists
+    IngredientName.find_or_create_by_expression(:expression => self.expression)
+  end
+
 end

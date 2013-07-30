@@ -25,4 +25,5 @@ gem 'acts-as-taggable-on'
 gem 'ingreedy', '~> 0.0.4 '
 gem 'linguo', :git => 'git://github.com/NARKOZ/linguo.git'
 gem 'simple_form'
+gem 'client_side_validations'
 
