@@ -9,7 +9,7 @@ class Ingredient < ActiveRecord::Base
 
   attr_accessible :name_EN, :source, :tags, :tag_ids, :tags_attributes
 
-  validates_presence_of :name_EN ,:on => :create, :message => "Field can't be blank"
+  validates_presence_of :name_EN ,:on => :create, :message => "This field can't be blank"
   validates_presence_of :name_EN, :on => :update
   validates_uniqueness_of :name_EN
 
