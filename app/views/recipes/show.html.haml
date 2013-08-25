@@ -1,0 +1,44 @@
+.recipe
+  .image{style: "background-image:url(#{@recipe.image_url})"}
+    .love Love
+    .recipe-details
+      %h1
+        = @recipe.title
+      .location
+        Pirate Summit 2013
+  .nutrition-information
+    .main-allergens
+      %h2 Main Allergens
+      %ul.nutrition-list
+        - @local_array = ingreedyparse(@recipe.ingredient_list)
+        - @local_array.each do |ingredient|
+          %li.nutrition-list--item
+            %span= ingredient
+    .traces
+      %h2 Traces
+      %ul.nutrition-list
+        %li.nutrition-list--item
+          %span not yet implemented
+    -#
+      .labels
+        %h2 Labels
+        %ul.label-list
+          %li.label-list--item.vegetarian not yet implemented
+          %li.label-list--item.vegan
+  - if @recipe.body.present?
+    .instructions
+      %h2 Instructions
+      %p
+        = @recipe.body
+  -#
+    .experiences
+      %h2
+        = "2"
+        Experiences
+      .experience
+        %h3
+          Oliver,
+          = "DateTime"
+        %p The dhal was absolutely awesome...
+
+= render "shared/mailchimp"

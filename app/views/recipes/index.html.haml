@@ -1,0 +1,11 @@
+%ul.recipes-list
+  - @recipes.each do |recipe|
+    %li.recipes-list--item
+      = link_to recipe_url(recipe), style: "background-image:url(#{recipe.image_url})" do
+        = recipe.title
+    %li.recipes-list--item
+      = link_to recipe_url(recipe), style: "background-image:url(#{recipe.image_url})" do
+        = recipe.title
+    %li.recipes-list--item
+      = link_to recipe_url(recipe), style: "background-image:url(#{recipe.image_url})" do
+        = recipe.title
