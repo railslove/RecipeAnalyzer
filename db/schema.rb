@@ -45,13 +45,12 @@ ActiveRecord::Schema.define(:version => 20130722130146) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "ingredients_tags", :force => true do |t|
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "ingredient_id"
-    t.integer  "tag_id"
+  create_table "ingredients_tags", :id => false, :force => true do |t|
+    t.integer "ingredient_id"
+    t.integer "tag_id"
   end
 
+  add_index "ingredients_tags", ["ingredient_id", "tag_id"], :name => "index_ingredients_tags_on_ingredient_id_and_tag_id"
   add_index "ingredients_tags", ["ingredient_id"], :name => "index_ingredients_tags_on_ingredient_id"
   add_index "ingredients_tags", ["tag_id"], :name => "index_ingredients_tags_on_tag_id"
 

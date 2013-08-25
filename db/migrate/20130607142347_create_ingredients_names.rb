@@ -5,6 +5,6 @@ class CreateIngredientsNames < ActiveRecord::Migration
       t.timestamps
     end
 
-   add_index :ingredients_names, :ingredient_id
+   # add_index :ingredients_names, :ingredient_id
   end
 end
