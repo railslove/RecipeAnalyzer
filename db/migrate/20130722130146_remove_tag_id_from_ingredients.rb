@@ -1,6 +1,6 @@
 class RemoveTagIdFromIngredients < ActiveRecord::Migration
   def up
-    remove_column :ingredients, :tag_id
+    #remove_column :ingredients, :tag_id
   end
 
   def down
