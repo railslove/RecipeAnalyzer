@@ -14,11 +14,12 @@
         - @local_array.each do |ingredient|
           %li.nutrition-list--item
             %span= ingredient
-    .traces
-      %h2 Traces
-      %ul.nutrition-list
-        %li.nutrition-list--item
-          %span not yet implemented
+    -#
+      .traces
+        %h2 Traces
+        %ul.nutrition-list
+          %li.nutrition-list--item
+            %span not yet implemented
     -#
       .labels
         %h2 Labels
@@ -27,7 +28,7 @@
           %li.label-list--item.vegan
   - if @recipe.body.present?
     .instructions
-      %h2 Instructions
+      %h2 Composition
       %p
         = @recipe.body
   -#
